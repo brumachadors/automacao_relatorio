@@ -1,0 +1,53 @@
+Script 1: "geracao_imagens_png.py"
+
+	Escala (input_scale):
+	- Você deve inserir a escala de interesse. 
+		1:X, em que X é a escala.
+	Exemplo: 1:2.000 -> input_scale = 2000
+
+	Área de interesse (aoi_input):
+	- Você deve inserir o caminho do seu arquivo shapefile.
+	Exemplo: aoi_teste.shp -> r'C:\Documents\relatorio\shapes\aoi_teste.shp'
+
+	*É importante manter a estrutura r'{caminho do arquivo}' para que o script funcione.
+
+	Diretório contendo os arquivos raster (raster_dir):
+	- Você deve inserir o caminho do diretório dos arquivos raster.
+	Exemplo: pasta imagens_satelite dentro de pasta relatorio em Documents 
+	-> r'C:\Documents\relatorio\imagens_satelite'
+
+	*É importante manter a estrutura r'{caminho do arquivo}' para que o script funcione.
+
+		!!!!!!!!!!!! IMPORTANTE !!!!!!!!!!!!
+	Os arquivos raster devem seguir os seguintes padrões:
+
+	- O nome do arquivo deve SEMPRE terminar com o dia, mês e ano (ddmmyyyy).
+	- É importante que o nome do arquivo ESTEJA SEPARADO PELO CARACTER UNDERSCORE (_) 
+	no lugar dos espaços para que o script funcione corretamente.
+
+		Confira os exemplos abaixo:
+
+		Exemplo 1: NOMEDOSATELITE_31072024.tif
+		Exemplo 2: NOMEDOSATELITE_PROJECAO_QUALQUEROUTRACOISA_31072024.tif
+
+	Diretório destino (out_path):
+	- Você deve inserir o caminho do diretório em que deseja salvar os resultados.
+	Exemplo: pasta resultados dentro de pasta relatorio em Documents
+	-> r'C:\Documents\relatorio\resultados'
+
+	*É importante manter a estrutura r'{caminho do arquivo}' para que o script funcione.
+
+	Simbologia da cor (rgb_code_outline, rgb_code_fill):
+	- Você deve inserir o código RGB de interesse seguindo a seguinte lógica:
+	[R, G, B, Transparência] 
+	Exemplo: Vermelho sem transparência -> rgb_code_outline = [255,0,0,100]
+	
+	Borda (border_size):
+	- Você deve inserir o tamanho da borda:
+	Exemplo: border_size = 2
+	
+
+
+
+
+
