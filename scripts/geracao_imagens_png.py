@@ -4,13 +4,13 @@
 input_scale = 2000                                                
 
 # Caminho do arquivo shapefile:                                    #
-aoi_input = r'D:\D_Downloads\temp\shapes\area_change.shp'             
+aoi_input = r'C:\Users\bruna.silva\Documents\shape_ana\shape_deteccao_mudancas.shp'             
 
 # Caminho da pasta contendo as imagens:                            #
-raster_dir = r'D:\D_Downloads\temp\img_report_true'                         
+raster_dir = r'T:\Ana\New Wave - Change Detection\Imagens_2'                         
 
 # Definir pasta destino:                                           #
-out_path = r'D:\D_Downloads\temp\resultados'                  
+out_path = r'T:\Ana\New Wave - Change Detection\resultados_bruna'                  
 
 # Cor da borda do shape [R, G, B, Transparency]:                   #
 rgb_code_outline = [255, 0, 0, 100]
@@ -81,9 +81,9 @@ for raster in input_raster_list:
     print(field_names)
 
     if "ITERID" not in field_names:
-        arcpy.management.AddField(aoi_input, "ITERID", "SHORT")
+        arcpy.management.AddField(aoi_gdb, "ITERID", "SHORT")
 
-    with arcpy.da.UpdateCursor(aoi_input, ["FID", "ITERID"]) as cursor:
+    with arcpy.da.UpdateCursor(aoi_gdb, ["OID@", "ITERID"]) as cursor:
         for row in cursor:
             row[1] = row[0]
             cursor.updateRow(row)  
