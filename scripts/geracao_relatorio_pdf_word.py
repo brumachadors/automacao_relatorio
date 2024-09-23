@@ -1,17 +1,17 @@
 ################################## DEFINIÇÃO DOS PARÂMETROS DO CÓDIGO
                                            
 # Arquivo shapefile (MESMO ARQUIVO SHAPEFILE GERADO NO ARCGIS):                 #
-fc_reference = r"D:\D_Downloads\temp\resultados\fc_reference.shp" 
+fc_reference = r"T:\Ana\New Wave - Change Detection\resultados_bruna\fc_reference.shp" 
 
 # Arquivo shapefile de municípios:                                              #
-base_mun_uf_2022 = r"D:\D_Downloads\BR_Municipios_2022\BR_Municipios_2022.shp"  
+base_mun_uf_2022 = r"T:\Ana\New Wave - Change Detection\BR_Municipios_2022 (1)\BR_Municipios_2022.shp"  
 
 # Diretório dos prints gerados                                                  #
-image_dir = r"D:\D_Downloads\temp\resultados"
+image_dir = r"T:\Ana\New Wave - Change Detection\resultados_bruna"
 
 # Output/nome do arquivo PDF de saída                                           #
-pdf_output_path = r"D:\D_Downloads\temp\resultados"
-pdf_name = 'Relatório layout'                                                 
+relatorio_output_path = r"T:\Ana\New Wave - Change Detection\resultados_bruna"
+relatorio_name = 'Relatório Versão 2'                                                 
 
 #################################################################################
 
@@ -138,20 +138,21 @@ def create_pdf(images, output_pdf, df_aggregated, image_dir):
 
 images = [f for f in os.listdir(image_dir) if os.path.isfile(os.path.join(image_dir, f))]
 
-output_pdf = f"{pdf_output_path}\\{pdf_name}.pdf"
+output_relatorio = f"{relatorio_output_path}\\{relatorio_name}.pdf"
 
-create_pdf(images, output_pdf, df_aggregated, image_dir)
+create_pdf(images, output_relatorio, df_aggregated, image_dir)
 
-print(f"Arquivo PDF criado ({output_pdf})")
+print(f"Arquivo PDF criado ({output_relatorio})")
 
-pdf_file = output_pdf
+pdf_file = output_relatorio
 
-docx_file = f'{pdf_output_path}\\{pdf_name}.docx'
+docx_file = f'{relatorio_output_path}\\{relatorio_name}.docx'
 
 cv = Converter(pdf_file)
 
 cv.convert(docx_file, start=0, end=None)
 
 cv.close()
+os.remove(output_relatorio)
 
 print(f'Arquivo WORD criado ({docx_file})')

@@ -1,4 +1,17 @@
-Script 1: "geracao_imagens_png.py"
+INSTALANDO BIBLIOTECAS:
+
+Vá até a pasta em que você salvou o arquivo "requirements_automacao_relatorio.txt",
+pressione 'shift' e clique com o botão direito em um canto vazio da pasta. Em seguida,
+selecione a opção "Abrir janela do PowerShell aqui" ou "Abrir janela de comando aqui".
+Na tela que irá abrir, execute o comando abaixo para a instalação de todos os pacotes necessários:
+
+pip install -r requirements.txt
+
+OBS: Você só precisará fazer isso uma unica vez.
+
+EXECUTANDO CÓDIGO:
+
+Script 1: "geracao_imagens_png_versao_reclasify.py"
 
 	Escala (input_scale):
 	- Você deve inserir a escala de interesse. 
@@ -47,7 +60,28 @@ Script 1: "geracao_imagens_png.py"
 	Exemplo: border_size = 2
 	
 
+Script 2: "geracao_relatorio_pdf_word.py"
 
+	Shapefile gerado na etapa 1 (fc_reference):
+	- Você deve inserir o caminho do arquivo shapefile gerado na etapa 1.
+	Ele está localizado na mesma pasta dos screenshots gerados e é nomeado: fc_reference.shp
+	Exemplo: fc_reference.shp -> r'T:\Ana\New Wave - Change Detection\resultados_bruna\fc_reference.shp'
 
+	Shapefile municípios (IBGE 2022) (base_mun_uf_2022):
+	- Você deve inserir o caminho do arquivo shapefile de municípios brasileiros do IBGE 2022.
+	Link para baixar: https://geoftp.ibge.gov.br/organizacao_do_territorio/malhas_territoriais/malhas_municipais/municipio_2022/Brasil/BR/BR_Municipios_2022.zip
+	Exemplo: BR_Municipios_2022.shp -> r'T:\Ana\New Wave - Change Detection\BR_Municipios_2022 (1)\BR_Municipios_2022.shp'
+
+	Diretório contendo os screenshots (image_dir):
+	- Você deve inserir o caminho do diretório dos arquivos screenshots gerados na etapa 1.
+	Exemplo: r'T:\Ana\New Wave - Change Detection\resultados_bruna'
+
+	Diretório destino (relatorio_output_path):
+	- Você deve inserir o caminho do diretório em que deseja salvar os resultados.
+	Exemplo: r'T:\Ana\New Wave - Change Detection\resultados_bruna'
+
+	Nome do relatório (relatorio_name):
+	- Você deve escolher um nome para o seu relatório.
+	Exemplo: 'Relatório Versão 2'
 
 
